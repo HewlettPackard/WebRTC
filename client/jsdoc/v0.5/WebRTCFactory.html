@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Namespace: WebRTCFactory</title>
+    
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+    
+    <h1 class="page-title">Namespace: WebRTCFactory</h1>
+    
+    
+
+
+
+<section>
+    
+<header>
+    <h2>
+    WebRTCFactory
+    </h2>
+    
+</header>  
+
+<article>
+    <div class="container-overview">
+    
+    
+    
+        
+        
+        
+<dl class="details">
+    
+        
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        hp-webrtc-api.js, line 78
+    </li></ul></dd>
+    
+    
+    
+    
+    
+    
+    
+</dl>
+
+        
+        
+    
+    </div>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+        <h3 class="subsection-title">Members</h3>
+        
+        <dl>
+            
+<dt>
+    <h4 class="name" id="WebRTCFactory"><span class="type-signature">&lt;static> </span>WebRTCFactory<span class="type-signature"></span></h4>
+    
+    
+    <p class="summary">The WebRTC factory.
+<p>
+This singleton object is the entry point of the WebRTC Client API.
+</p><p>
+It allows the user to create WebRTC connectivities to different Internet Signaling Functions.
+</p><p>
+Connectivities will then, in turn, allow the user to create WebRTC calls.
+</p>
+<div style='width:50%'>
+  <img src='webrtc-factory.png' />
+</div></p>
+    
+</dt>
+<dd>
+    
+    
+    
+
+    
+<dl class="details">
+    
+        
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        hp-webrtc-api.js, line 84
+    </li></ul></dd>
+    
+    
+    
+    
+    
+    
+    
+</dl>
+
+    
+    
+</dd>
+
+        </dl>
+    
+    
+    
+        <h3 class="subsection-title">Methods</h3>
+        
+        <dl>
+            
+<dt>
+    <h4 class="name" id="createConnectivity"><span class="type-signature">&lt;static> </span>createConnectivity<span class="signature">(endpointData)</span><span class="type-signature"> &rarr; {object}</span></h4>
+    
+    
+    <p class="summary">Create a WebRTC connectivity.</p>
+    
+</dt>
+<dd>
+    
+    
+
+    
+    
+    
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+		
+		<th>Type</th>
+		
+		
+		
+		
+		
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+	
+	<tbody>
+	
+	
+        <tr>
+            
+                <td class="name"><code>endpointData</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">object</span>
+
+
+            
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last"><p>Mandatory WebRTC connectivity End Point Data.
+This data is the object returned in JSON format by the invocation done by the Web Application Server
+to the 'create' REST operation exposed by the EndpointWebService of the WebRTC gateway.</p></td>
+        </tr>
+	
+	
+	</tbody>
+</table>
+    
+    
+    
+<dl class="details">
+    
+        
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        hp-webrtc-api.js, line 1856
+    </li></ul></dd>
+    
+    
+    
+    
+    
+    
+    
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    <h5>Throws:</h5>
+    
+            
+
+<dl>
+    <dt>
+        <div class="param-desc">
+        in case of immediate error.
+        </div>
+    </dt>
+    <dt>
+        <dl>
+            <dt>
+                Type
+            </dt>
+            <dd>
+                
+<span class="param-type"><a href="global.html#event:error">event:error</a></span>
+
+
+            </dd>
+        </dl>
+    </dt>
+</dl>
+
+
+        
+    
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+    <p>The created <a href="WebRTCConnectivity.html">WebRTCConnectivity</a> object that can fire asynchronously <a href="global.html#event:error">event:error</a> and <a href="global.html#event:event">event:event</a> events.</p>
+</div>
+
+
+
+<dl>
+	<dt>
+		Type
+	</dt>
+	<dd>
+		
+<span class="param-type">object</span>
+
+
+	</dd>
+</dl>
+
+        
+    
+    
+        <h5>Example</h5>
+        
+    <pre class="prettyprint"><code>   
+    var endpointData = {...};
+    ...
+    try {
+     ...
+     var connectivity = WebRTCFactory.createConnectivity(endpointData);
+     ...
+     connectivity.connect();
+     ...
+    }
+    catch(ex) {    
+       console.error(ex);
+    }      </code></pre>
+
+    
+</dd>
+
+        </dl>
+    
+    
+    
+    
+    
+</article>
+
+</section>  
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Index</a></h2><h3>Events</h3><ul><li><a href="global.html#event:call">call</a></li><li><a href="global.html#event:error">error</a></li><li><a href="global.html#event:event">event</a></li><li><a href="global.html#event:ice">ice</a></li><li><a href="global.html#event:media">media</a></li><li><a href="global.html#event:session">session</a></li><li><a href="global.html#event:signaling">signaling</a></li></ul><h3>Namespaces</h3><ul><li><a href="WebRTCCall.html">WebRTCCall</a></li><li><a href="WebRTCConnectivity.html">WebRTCConnectivity</a></li><li><a href="WebRTCFactory.html">WebRTCFactory</a></li></ul><h3>Mixins</h3><ul><li><a href="EventEmitter.html">EventEmitter</a></li></ul><h3>Global</h3><ul><li><a href="global.html#isWebRTCEnabled">isWebRTCEnabled</a></li></ul>
+</nav>
+
+<br clear="both">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.2.3-dev</a> on Wed Jan 14 2015 03:10:25 GMT+0100 (CET)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>

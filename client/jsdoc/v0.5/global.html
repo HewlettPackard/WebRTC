@@ -1,0 +1,1505 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Global</title>
+    
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+    
+    <h1 class="page-title">Global</h1>
+    
+    
+
+
+
+<section>
+    
+<header>
+    <h2>
+    
+    </h2>
+    
+</header>  
+
+<article>
+    <div class="container-overview">
+    
+    
+    
+        
+        
+        
+<dl class="details">
+    
+        
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+</dl>
+
+        
+        
+    
+    </div>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+        <h3 class="subsection-title">Methods</h3>
+        
+        <dl>
+            
+<dt>
+    <h4 class="name" id="isWebRTCEnabled"><span class="type-signature"></span>isWebRTCEnabled<span class="signature">()</span><span class="type-signature"> &rarr; {boolean}</span></h4>
+    
+    
+    <p class="summary">Check if WebRTC is supported by current navigator.
+<p>
+This function checks the presence of an implementation of one of the functions (namely, getUserMedia)
+defined in W3C specification (<a href="http://www.w3.org/TR/mediacapture-streams">http://www.w3.org/TR/mediacapture-streams</a>):
+</p>
+<ul>
+  <li>navigator.mozGetUserMedia()    for Mozilla Firefox.</li>
+  <li>navigator.webkitGetUserMedia() for Google Chrome.</li>
+</ul></p>
+    
+</dt>
+<dd>
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+<dl class="details">
+    
+        
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        hp-webrtc-api.js, line 5371
+    </li></ul></dd>
+    
+    
+    
+    
+    
+    
+    
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+    <p>true if webRTC functionality is supported, false if not.</p>
+</div>
+
+
+
+<dl>
+	<dt>
+		Type
+	</dt>
+	<dd>
+		
+<span class="param-type">boolean</span>
+
+
+	</dd>
+</dl>
+
+        
+    
+    
+        <h5>Example</h5>
+        
+    <pre class="prettyprint"><code>    if (isWebRTCEnabled()) {
+       console.log('WebRTC is supported');
+    } else {
+       console.log('WebRTC is NOT supported');
+    }</code></pre>
+
+    
+</dd>
+
+        </dl>
+    
+    
+    
+    
+    
+        <h3 class="subsection-title">Events</h3>
+        
+        <dl>
+            
+<dt>
+    <h4 class="name" id="event:call">call</h4>
+    
+    
+    <p class="summary">WebRTC call event.
+<p>
+WebRTC public event related to a WebRTC call.
+</p></p>
+    
+</dt>
+<dd>
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+<dl class="details">
+    
+        
+        <h5 class="subsection-title">Properties:</h5>
+        
+        <dl>
+
+<table class="props">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+		
+		<th>Type</th>
+		
+		
+		
+		
+		
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+	
+	<tbody>
+	
+	
+        <tr>
+            
+                <td class="name"><code>state</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">object</span>
+
+
+            
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last"><p>The state corresponding to this event:</p>
+<ul>
+  <li>'TRYING'                  : The call is trying to connect to destination.</li>
+  <li>'RINGING'                 : The call is ringing at destination.</li>
+  <li>'FORWARDING'              : The call is being forwarded.</li>
+  <li>'QUEUED'                  : The call is queued.</li>
+  <li>'EARLY_ANSWERED'          : The call is early answered.</li>
+  <li>'EARLY_TERMINATED'        : Early answer is terminated.</li>
+  <li>'ANSWERED'                : The call is answered locally or remotely.</li>
+  <li>'HANGUP'                  : The call is hang-up locally or remotely.</li>
+  <li>'Incoming Message'        : An incoming message is notified on the call.</li>
+  <li>'Incoming Message Status' : An incoming message status is notified on the call.</li>
+  <li>'Outgoing Message'        : An outgoing message will be sent on the call.</li>
+</ul></td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>message</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">object</span>
+
+
+            
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last"><p>The message contains the data payload of the event.
+  <li>When processing an incoming message, the event state is 'Incoming Message' and the event message property contains
+      an object with the following properties:
+      <ul>
+          <li>ood     : The Operation Opaque Data. It can be a string or an object.
+                        This ood is provided by the the Web Application Server. 
+                        This ood usually represents the origin of the incoming message. 
+          </li>
+          <li>msgId   : The message identifier.</li>
+          <li>profile : The message profile.</li>
+          <li>payload : The message payload.</li>
+       </ul>
+  </li>
+  <li>When processing an incoming message status, the event state is 'Incoming Message Status' and the event message property contains
+      an object with the following properties:
+      <ul>
+          <li>msgId : The message identifier for which the status applies.</li>
+          <li>code  : The message status code. This code can be:
+              <ul>
+                  <li>'SUCCESS'             : The message has been successfully sent.</li>
+                 <li>'TIMEOUT'             : Timeout when trying to reach the destination.</li>
+                 <li>'UNAVAILABLE'         : The destination is unavailable.</li>
+                 <li>'BUSY'                : The destination is busy.</li>
+                 <li>'NO_ANSWER'           : Destination did not answer.</li>
+                 <li>'NOT_REACHABLE'       : Destination is not reachable.</li>
+                 <li>'REJECTED'            : The messge is rejected.</li>
+                 <li>'INVALID_RESPONSE'    : An invalid response has been received.</li>
+                 <li>'REDIRECTED'          : The message is redirected.</li>
+                 <li>'BAD_REQUEST'         : The message request is not understood.</li>
+                 <li>'REMOTE_ERROR'        : Remote error.</li>
+                 <li>'GLOBAL_ERROR'        : Global error.</li>
+                 <li>'INTERNAL_ERROR'      : Internal error.</li>
+                 <li>'NOT_AUTHORIZED'      : The message is not authorized by the application.</li>
+                 <li>'AUTHORIZATION_FAILED': Failed to check the call authorization with the application.</li>
+                 <li>'IO_ERROR'            : Input/Output error.</li>
+                 <li>'TERMINATED'          ! The call is forcefully terminated due to local or remote end point termination.</li>
+                 <li>'LIMIT_REACHED'       : The message is rejected because some limits have been reached.</li>
+              </ul>
+          </li>
+       </ul>
+  </li>
+  <li>When processing an outgoing message, the event state is 'Outgoing Message' and the event message property contains
+      an object with the following properties:
+      <ul>
+          <li>ood     : The Operation Opaque Data. It can be a string or an object.
+                        This ood is sent to the Web Application Server. 
+                        This ood usually represents the destination of the outgoing message. 
+          </li>
+          <li>msgId   : The message identifier.</li>
+          <li>profile : The message profile.</li>
+          <li>payload : The message payload.</li>
+       </ul>
+  </li></p></td>
+        </tr>
+	
+	
+	</tbody>
+</table></dl>
+        
+    
+        
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        hp-webrtc-api.js, line 1006
+    </li></ul></dd>
+    
+    
+    
+    
+    
+    
+    
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    
+    
+</dd>
+
+        
+            
+<dt>
+    <h4 class="name" id="event:error">error</h4>
+    
+    
+    <p class="summary">WebRTC error event.
+<p>
+WebRTC event indicating that an error occurred.
+</p>
+<p>
+An error is first dispatched via an error callback (if provided by the user). Then, it is dispatched to error listeners.
+</p><p>
+As a consequence, a user providing an error callback and listening on errors will receive the error twice, unless propagation
+is stopped at some step of the error processing (i.e., within the user-provided callback).
+</p></p>
+    
+</dt>
+<dd>
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+<dl class="details">
+    
+        
+        <h5 class="subsection-title">Properties:</h5>
+        
+        <dl>
+
+<table class="props">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+		
+		<th>Type</th>
+		
+		
+		
+		
+		
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+	
+	<tbody>
+	
+	
+        <tr>
+            
+                <td class="name"><code>name</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last"><p>The name (type) of the event ('error').</p></td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>message</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last"><p>An optional error message.</p></td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>stopPropagation</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">boolean</span>
+
+
+            
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last"><p>Stop propagation of current error event.</p></td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>detail</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">object</span>
+
+
+            
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last"><p>An optional object associated with the error (providing further details on the error).</p>
+<ul>
+  <li>When the value of the message property is 'Incoming Call with MEDIA_ERROR' then the value is the corresponding call instance in 'Destroyed' state.</li>
+  <li>When the value of the message property is 'Call Error' then the following value can be provided:
+    <ul>
+      <li>'TIMEOUT':              Timeout when trying to reach the destination.</li>
+      <li>'UNAVAILABLE':          The destination is unavailable.</li>
+      <li>'BUSY':                 The destination is busy.</li>
+      <li>'NO_ANSWER':            Destination did not answer.</li>
+      <li>'NOT_REACHABLE':        Destination is not reachable.</li>
+      <li>'REJECTED':             The call is rejected.</li>
+      <li>'INVALID_RESPONSE':     An invalid response has been received.</li>
+      <li>'REDIRECTED':           The call is redirected.</li>
+      <li>'BAD_REQUEST':          The call request is not understood.</li>
+      <li>'REMOTE_ERROR':         Remote error.</li>
+      <li>'GLOBAL_ERROR':         Global error.</li>
+      <li>'INTERNAL_ERROR':       Internal error.</li>
+      <li>'MEDIA_ERROR':          Media error.</li>
+      <li>'NOT_AUTHORIZED':       The call is not authorized by the application.</li>
+      <li>'AUTHORIZATION_FAILED': Failed to check the call authorization with the application.</li>
+      <li>'IO_ERROR':             Input/Output error.</li>
+      <li>'TERMINATED':              The call is forcefully terminated due to local or remote end point termination.</li>
+      <li>'LIMIT_REACHED':          The call is rejected or forcefully terminated because some limits have been reached.</li>
+    </ul>
+  </li>
+</ul></td>
+        </tr>
+	
+	
+	</tbody>
+</table></dl>
+        
+    
+        
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        hp-webrtc-api.js, line 1127
+    </li></ul></dd>
+    
+    
+    
+    
+    
+    
+    
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    
+    
+</dd>
+
+        
+            
+<dt>
+    <h4 class="name" id="event:event">event</h4>
+    
+    
+    <p class="summary">WebRTC 'generic' event.
+<p>
+The object all WebRTC events derive from (media events, call events, signaling channel events, ..etc...).
+</p></p>
+    
+</dt>
+<dd>
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+<dl class="details">
+    
+        
+        <h5 class="subsection-title">Properties:</h5>
+        
+        <dl>
+
+<table class="props">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+		
+		<th>Type</th>
+		
+		
+		
+		
+		
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+	
+	<tbody>
+	
+	
+        <tr>
+            
+                <td class="name"><code>name</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last"><p>The name (type) of the event:</p>
+<ul>
+  <li>'event'     : WebRTC 'generic' event (default value).</li>
+  <li>'signaling' : WebRTC signaling channel event.</li>
+  <li>'media'     : WebRTC media event.</li>
+  <li>'ice'       : WebRTC ICE event.</li>
+  <li>'call'      : WebRTC call event.</li>
+  <li>'session'   : WebRTC session event.</li>
+</ul></td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>stopPropagation</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">boolean</span>
+
+
+            
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last"><p>Stop propagation of current event.</p>
+<p>
+An event is first dispatched via an event callback (if provided by the user). Then, it is dispatched to listeners
+as a 'specialized' event (e.g., an event related to a call, a signaling channel, ...),
+and finally as a 'generic' event.
+</p><p>
+As a consequence, a user providing an event callback and listening on both 'specialized' and 'generic' events will receive
+the event three times, unless propagation is stopped at some step of the event processing
+(i.e., within the user-provided callback or in the callback provided when registering as listener for a 'specialized' event).
+</p></td>
+        </tr>
+	
+	
+	</tbody>
+</table></dl>
+        
+    
+        
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        hp-webrtc-api.js, line 666
+    </li></ul></dd>
+    
+    
+    
+    
+    
+    
+    
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    
+    
+</dd>
+
+        
+            
+<dt>
+    <h4 class="name" id="event:ice">ice</h4>
+    
+    
+    <p class="summary">WebRTC ICE event.
+<p>
+WebRTC event related to ICE negotiation for a WebRTC call.
+</p></p>
+    
+</dt>
+<dd>
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+<dl class="details">
+    
+        
+        <h5 class="subsection-title">Properties:</h5>
+        
+        <dl>
+
+<table class="props">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+		
+		<th>Type</th>
+		
+		
+		
+		
+		
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+	
+	<tbody>
+	
+	
+        <tr>
+            
+                <td class="name"><code>event</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">object</span>
+
+
+            
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last"><p>optional .</p></td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>gatheringState</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last"><p>ICE states:</p>
+<ul>
+  <li>'new'.</li>
+  <li>'gathering'.</li>
+  <li>'complete'.</li>
+  <li>'checking'.</li>
+  <li>'connected'.</li>
+  <li>'completed'.</li>
+  <li>'failed'.</li>
+  <li>'disconnected'.</li>
+  <li>'closed'.</li>
+</ul></td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>connectionState</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last"><p>(refer to parameter 'gatheringState'
+                                     for the list of possible states).</p></td>
+        </tr>
+	
+	
+	</tbody>
+</table></dl>
+        
+    
+        
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        hp-webrtc-api.js, line 861
+    </li></ul></dd>
+    
+    
+    
+    
+    
+    
+    
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    
+    
+</dd>
+
+        
+            
+<dt>
+    <h4 class="name" id="event:media">media</h4>
+    
+    
+    <p class="summary">WebRTC media event.
+<p>
+WebRTC event related to the media stream of a WebRTC call.
+</p></p>
+    
+</dt>
+<dd>
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+<dl class="details">
+    
+        
+        <h5 class="subsection-title">Properties:</h5>
+        
+        <dl>
+
+<table class="props">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+		
+		<th>Type</th>
+		
+		
+		
+		
+		
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+	
+	<tbody>
+	
+	
+        <tr>
+            
+                <td class="name"><code>message</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">object</span>
+
+
+            
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last"><p>The message contains the data payload of the event.
+The message contains these attributes:</p>
+<ul>
+    <li> type [mandatory]   : contains the media type ('local' or 'remote'). </li>
+    <li> stream [mandatory] : contains the stream chunck.</li>
+    <li> videoEl [optional] : contains the name of the video element where the stream is displayed. Present only for the 'New Attached Stream' and 'Remove Attached Stream' states.</li>
+</ul></td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>state</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last"><p>The current state of the media stream:</p>
+<ul>
+  <li>'New Stream'             : a new stream contained in the stream attribute of the message has been created.</li>
+  <li>'New Attached Stream'    : a new stream contained in the stream attribute of the message has been created and
+                                 attached to the video element with the name contained in the videoEl attribute of the message.
+                                 This state is triggered instead of the 'New Stream' one if a name of a video element has been provided
+                                 in localVideoEl, inCallLocalVideoEl or remoteVideoEl attributes
+                                 of the options argument of the connectivity.createCall or call.pickup methods.</li>
+  <li>'Remove Stream'          : the stream contained in the stream attribute of the message has been removed.</li><br>  <li>'Remove Attached Stream' : the stream contained in the stream attribute of the message has been removed and
+                                 will be detached from the video element with the name contained in the videoEl attribute of the message.
+                                 This state is triggered instead of the 'Remove Stream' one if a name of a video element has been provided
+                                 in localVideoEl, inCallLocalVideoEl or remoteVideoEl attributes
+                                 of the options argument of the connectivity.createCall or call.pickup methods.</li>
+</ul></td>
+        </tr>
+	
+	
+	</tbody>
+</table></dl>
+        
+    
+        
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        hp-webrtc-api.js, line 810
+    </li></ul></dd>
+    
+    
+    
+    
+    
+    
+    
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    
+    
+</dd>
+
+        
+            
+<dt>
+    <h4 class="name" id="event:session">session</h4>
+    
+    
+    <p class="summary">WebRTC session event.
+<p>
+WebRTC event related to a WebRTC session (as defined in JSEP specification, see <a href="https://tools.ietf.org/html/draft-ietf-rtcweb-jsep-06">https://tools.ietf.org/html/draft-ietf-rtcweb-jsep-06</a>).
+</p></p>
+    
+</dt>
+<dd>
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+<dl class="details">
+    
+        
+        <h5 class="subsection-title">Properties:</h5>
+        
+        <dl>
+
+<table class="props">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+		
+		<th>Type</th>
+		
+		
+		
+		
+		
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+	
+	<tbody>
+	
+	
+        <tr>
+            
+                <td class="name"><code>signalingState</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last"><p>The session's signaling state:</p>
+<ul>
+  <li>'initial'              : the session's initial state (this state is not defined in JSEP).</li>
+  <li>'stable'               : the session is in a stable state. SDP negotiation succeeded, no re-negotiation pending.</li>
+  <li>'have-local-offer'     : SDP negotiation pending, local offer sent, no remote answer received yet.</li>
+  <li>'have-remote-offer'    : SDP negotiation pending, remote offer received, no local answer sent yet</li>
+  <li>'have-local-pranswer'  : SDP negotiation pending, remote offer received, local provisional answer sent.</li>
+  <li>'have-remote-pranswer' : SDP negotiation pending, local offer sent, remote provisional answer received.</li>
+  <li>'closed'               : the session is closed (this state is not defined in JSEP).</li>
+</ul></td>
+        </tr>
+	
+	
+	</tbody>
+</table></dl>
+        
+    
+        
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        hp-webrtc-api.js, line 1100
+    </li></ul></dd>
+    
+    
+    
+    
+    
+    
+    
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    
+    
+</dd>
+
+        
+            
+<dt>
+    <h4 class="name" id="event:signaling">signaling</h4>
+    
+    
+    <p class="summary">WebRTC signaling channel event.
+<p>
+WebRTC event related to the signaling channel of a WebRTC connectivity.
+</p></p>
+    
+</dt>
+<dd>
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+<dl class="details">
+    
+        
+        <h5 class="subsection-title">Properties:</h5>
+        
+        <dl>
+
+<table class="props">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+		
+		<th>Type</th>
+		
+		
+		
+		
+		
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+	
+	<tbody>
+	
+	
+        <tr>
+            
+                <td class="name"><code>state</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last"><p>The current state of the signaling channel:</p>
+<ul>
+  <li>'Stale'                    : Signaling channel is stale (definitely disconnected).</li>
+  <li>'Not Connected'           : Signaling channel is not connected.</li>
+  <li>'Connecting'              : Signaling channel is connecting.</li>
+  <li>'Ready'                   : Signaling channel is connected.</li>
+  <li>'Incoming Call'           : An incoming call is notified on the signaling channel.</li>
+  <li>'Outgoing Call'           : An outgoing call has been created.</li>
+  <li>'Incoming Message'        : An incoming message is notified on the signaling channel.</li>
+  <li>'Incoming Message Status' : An incoming message status is notified on the signaling channel.</li>
+  <li>'Outgoing Message'        : An outgoing message will be sent on the signaling channel.</li>
+</ul></td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>message</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">object</span>
+
+
+            
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last"><p>The message contains some data payload retated to the event.</p>
+<p><ul>
+  <li>In the case of state change (1st 4 states), the message is a string containg extra information. </li>
+  <li>When processing an incoming call, the event state is 'Incoming Call' and the event message property contains
+      the &quot;WebRTCCall&quot; instance created on call reception.</li>
+  <li>When processing an outgoing call, the event state is 'Outgoing Call' and the event message property contains
+      the &quot;WebRTCCall&quot; instance created by the createCall method of <a href="WebRTCConnectivity.html">WebRTCConnectivity</a>.</li>
+  <li>When processing an incoming message, the event state is 'Incoming Message' and the event message property contains
+      an object with the following properties:
+      <ul>
+          <li>ood     : The Operation Opaque Data. It is a string.
+                        This ood is provided by the the Web Application Server. 
+                        This ood usually represents the origin of the incoming message. 
+          </li>
+          <li>msgId   : The message identifier. It is a string.</li>
+          <li>profile : The message profile. It is a string.</li>
+          <li>payload : The message payload. It is a string.</li>
+       </ul>
+  </li>
+  <li>When processing an incoming message status, the event state is 'Incoming Message Status' and the event message property contains
+      an object with the following properties:
+      <ul>
+          <li>msgId : The message identifier for which the status applies. It is a string.</li>
+          <li>code  : The message status code. It is a string. This code can be:
+              <ul>
+                  <li>'SUCCESS'             : The message has been successfully sent.</li>
+                 <li>'TIMEOUT'             : Timeout when trying to reach the destination.</li>
+                 <li>'UNAVAILABLE'         : The destination is unavailable.</li>
+                 <li>'BUSY'                : The destination is busy.</li>
+                 <li>'NO_ANSWER'           : Destination did not answer.</li>
+                 <li>'NOT_REACHABLE'       : Destination is not reachable.</li>
+                 <li>'REJECTED'            : The messge is rejected.</li>
+                 <li>'INVALID_RESPONSE'    : An invalid response has been received.</li>
+                 <li>'REDIRECTED'          : The message is redirected.</li>
+                 <li>'BAD_REQUEST'         : The message request is not understood.</li>
+                 <li>'REMOTE_ERROR'        : Remote error.</li>
+                 <li>'GLOBAL_ERROR'        : Global error.</li>
+                 <li>'INTERNAL_ERROR'      : Internal error.</li>
+                 <li>'NOT_AUTHORIZED'      : The message is not authorized by the application.</li>
+                 <li>'AUTHORIZATION_FAILED': Failed to check the call authorization with the application.</li>
+                 <li>'IO_ERROR'            : Input/Output error.</li>
+                 <li>'TERMINATED'          ! The call is forcefully terminated due to local or remote end point termination.</li>
+                 <li>'LIMIT_REACHED'       : The message is rejected because some limits have been reached.</li>
+              </ul>
+          </li>
+       </ul>
+  </li>
+  <li>When processing an outgoing message, the event state is 'Outgoing Message' and the event message property contains
+      an object with the following properties:
+      <ul>
+          <li>ood     : The Operation Opaque Data. It is a string..
+                        This ood is sent to the Web Application Server. 
+                        This ood usually represents the destination of the outgoing message. 
+          </li>
+          <li>msgId   : The message identifier. It is a string.</li>
+          <li>profile : The message profile. It is a string.</li>
+          <li>payload : The message payload. It is a string.</li>
+       </ul>
+  </li></p></td>
+        </tr>
+	
+	
+	</tbody>
+</table></dl>
+        
+    
+        
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        hp-webrtc-api.js, line 709
+    </li></ul></dd>
+    
+    
+    
+    
+    
+    
+    
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    
+    
+</dd>
+
+        </dl>
+    
+</article>
+
+</section>  
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Index</a></h2><h3>Events</h3><ul><li><a href="global.html#event:call">call</a></li><li><a href="global.html#event:error">error</a></li><li><a href="global.html#event:event">event</a></li><li><a href="global.html#event:ice">ice</a></li><li><a href="global.html#event:media">media</a></li><li><a href="global.html#event:session">session</a></li><li><a href="global.html#event:signaling">signaling</a></li></ul><h3>Namespaces</h3><ul><li><a href="WebRTCCall.html">WebRTCCall</a></li><li><a href="WebRTCConnectivity.html">WebRTCConnectivity</a></li><li><a href="WebRTCFactory.html">WebRTCFactory</a></li></ul><h3>Mixins</h3><ul><li><a href="EventEmitter.html">EventEmitter</a></li></ul><h3>Global</h3><ul><li><a href="global.html#isWebRTCEnabled">isWebRTCEnabled</a></li></ul>
+</nav>
+
+<br clear="both">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.2.3-dev</a> on Wed Jan 14 2015 03:10:24 GMT+0100 (CET)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>

@@ -1,0 +1,773 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Mixin: EventEmitter</title>
+    
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+    
+    <h1 class="page-title">Mixin: EventEmitter</h1>
+    
+    
+
+
+
+<section>
+    
+<header>
+    <h2>
+    EventEmitter
+    </h2>
+    
+</header>  
+
+<article>
+    <div class="container-overview">
+    
+    
+    
+        
+        
+        
+<dl class="details">
+    
+        
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        hp-webrtc-api.js, line 1278
+    </li></ul></dd>
+    
+    
+    
+    
+    
+    
+    
+</dl>
+
+        
+        
+    
+    </div>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+        <h3 class="subsection-title">Methods</h3>
+        
+        <dl>
+            
+<dt>
+    <h4 class="name" id="countListeners"><span class="type-signature">&lt;static> </span>countListeners<span class="signature">(type)</span><span class="type-signature"> &rarr; {number}</span></h4>
+    
+    
+    <p class="summary">Get the total number of listeners registered on a type of event.
+<p>
+This function returns the total number of listeners registered on a type of event.
+</p></p>
+    
+</dt>
+<dd>
+    
+    
+
+    
+    
+    
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+		
+		<th>Type</th>
+		
+		
+		
+		
+		
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+	
+	<tbody>
+	
+	
+        <tr>
+            
+                <td class="name"><code>type</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last"><p>The event type. If omitted, listeners bound on all event types will be counted.</p></td>
+        </tr>
+	
+	
+	</tbody>
+</table>
+    
+    
+    
+<dl class="details">
+    
+        
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        hp-webrtc-api.js, line 1636
+    </li></ul></dd>
+    
+    
+    
+    
+    
+    
+    
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+    <p>The total number of listeners.</p>
+</div>
+
+
+
+<dl>
+	<dt>
+		Type
+	</dt>
+	<dd>
+		
+<span class="param-type">number</span>
+
+
+	</dd>
+</dl>
+
+        
+    
+    
+</dd>
+
+        
+            
+<dt>
+    <h4 class="name" id="off"><span class="type-signature">&lt;static> </span>off<span class="signature">(types, listener)</span><span class="type-signature"></span></h4>
+    
+    
+    <p class="summary">Un-bind/un-register a callback function from one or more event types.
+<p>
+This function un-binds (i.e., un-registers) a callback function from one or more event types.
+</p></p>
+    
+</dt>
+<dd>
+    
+    
+
+    
+    
+    
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+		
+		<th>Type</th>
+		
+		
+		
+		
+		
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+	
+	<tbody>
+	
+	
+        <tr>
+            
+                <td class="name"><code>types</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last"><p>A string of one or more event types (whitespace separated) the listener is to be un-registered from:</p>
+<ul>
+    <li>signaling : signaling channel events.</li>
+    <li>fsm       : fsm events (call).</li>
+       <li>ice       : ICE events.</li>
+    <li>call      : call events.</li>
+    <li>session   : session events.</li>
+    <li>media     : media events.</li>
+    <li>event     : 'generic' events.</li>
+    <li>error     : error and timeout events.</li>
+</ul></td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>listener</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">function</span>
+
+
+            
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last"><p>The callback function provided when the listener was bound.</p></td>
+        </tr>
+	
+	
+	</tbody>
+</table>
+    
+    
+    
+<dl class="details">
+    
+        
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        hp-webrtc-api.js, line 1450
+    </li></ul></dd>
+    
+    
+    
+    
+    
+    
+    
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    
+    
+        <h5>Example</h5>
+        
+    <pre class="prettyprint"><code>    var endpointData = { ... };
+    var connectivity = WebRTCFactory.createConnectivity(endpointData);
+
+    var errorFct = function(error) { ...};
+
+    connectivity.on('error', errorFct);
+    connectivity.connect();
+    ...
+    connectivity.off('error', errorFct);
+
+    var callOptions = { ... };
+    var call = connectivity.createCall('sip:alice@example.com', callOptions);
+
+    var eventFct = function(event) { ...};
+
+    call.on('ice media', eventFct);
+    ...
+    call.off('ice media', eventFct);</code></pre>
+
+    
+</dd>
+
+        
+            
+<dt>
+    <h4 class="name" id="on"><span class="type-signature">&lt;static> </span>on<span class="signature">(types, listener)</span><span class="type-signature"></span></h4>
+    
+    
+    <p class="summary">Bind/register a callback function on one or more event types.
+<p>
+This function binds (i.e., registers) a callback function on one or more event types.
+</p></p>
+    
+</dt>
+<dd>
+    
+    
+
+    
+    
+    
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+		
+		<th>Type</th>
+		
+		
+		
+		
+		
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+	
+	<tbody>
+	
+	
+        <tr>
+            
+                <td class="name"><code>types</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last"><p>A string of one or more event types (whitespace separated) the listener is to be registered on:</p>
+<ul>
+    <li>signaling : signaling channel events.</li>
+    <li>fsm       : fsm events (call).</li>
+       <li>ice       : ICE events.</li>
+    <li>call      : call events.</li>
+    <li>session   : session events.</li>
+    <li>media     : media events.</li>
+    <li>event     : 'generic' events.</li>
+    <li>error     : error and timeout events.</li>
+</ul></td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>listener</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">function</span>
+
+
+            
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last"><p>A callback function acting as a listener on the event(s).</p></td>
+        </tr>
+	
+	
+	</tbody>
+</table>
+    
+    
+    
+<dl class="details">
+    
+        
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        hp-webrtc-api.js, line 1288
+    </li></ul></dd>
+    
+    
+    
+    
+    
+    
+    
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    
+    
+        <h5>Example</h5>
+        
+    <pre class="prettyprint"><code>    var endpointData = { ... };
+    var connectivity = WebRTCFactory.createConnectivity(endpointData);
+
+    connectivity.on('error', function(error) { ... });
+    connectivity.on('signaling', function(event) { ... });
+    connectivity.connect();
+
+    var callOptions = { ... };
+    var call = connectivity.createCall('sip:alice@example.com', callOptions);
+
+    call.on('error', function(error) { ... });
+    call.on('ice media', function(event) { ... });
+    call.on('call fsm session', function(event) { ... });</code></pre>
+
+    
+</dd>
+
+        
+            
+<dt>
+    <h4 class="name" id="once"><span class="type-signature">&lt;static> </span>once<span class="signature">(type, listener)</span><span class="type-signature"></span></h4>
+    
+    
+    <p class="summary">Bind/register a 'one-shot' callback function on an event type.
+<p>
+This function binds (i.e., registers) a callback function on an event type. This callback function should
+only be called once (and then silently un-bound).
+</p></p>
+    
+</dt>
+<dd>
+    
+    
+
+    
+    
+    
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+		
+		<th>Type</th>
+		
+		
+		
+		
+		
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+	
+	<tbody>
+	
+	
+        <tr>
+            
+                <td class="name"><code>type</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last"><p>The event type the listener is to be registered on:</p>
+<ul>
+    <li>signaling : signaling channel events.</li>
+    <li>fsm       : fsm events (call).</li>
+       <li>ice       : ICE events.</li>
+    <li>call      : call events.</li>
+    <li>session   : session events.</li>
+    <li>media     : media events.</li>
+    <li>event     : 'generic' events.</li>
+    <li>error     : error and timeout events.</li>
+</ul></td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>listener</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">function</span>
+
+
+            
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last"><p>A callback function acting as a listener on the event.</p></td>
+        </tr>
+	
+	
+	</tbody>
+</table>
+    
+    
+    
+<dl class="details">
+    
+        
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        hp-webrtc-api.js, line 1377
+    </li></ul></dd>
+    
+    
+    
+    
+    
+    
+    
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    
+    
+        <h5>Example</h5>
+        
+    <pre class="prettyprint"><code>    var endpointData = { ... };
+    var connectivity = WebRTCFactory.createConnectivity(endpointData);
+
+    connectivity.once('error', function(error) { ... });
+    connectivity.once('signaling', function(event) { ... });
+    connectivity.connect();
+
+    var callOptions = { ... };
+    var call = connectivity.createCall('sip:alice@example.com', callOptions);
+
+    call.once('error', function(error) { ... });
+    call.once('call', function(event) { ... });</code></pre>
+
+    
+</dd>
+
+        </dl>
+    
+    
+    
+    
+    
+</article>
+
+</section>  
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Index</a></h2><h3>Events</h3><ul><li><a href="global.html#event:call">call</a></li><li><a href="global.html#event:error">error</a></li><li><a href="global.html#event:event">event</a></li><li><a href="global.html#event:ice">ice</a></li><li><a href="global.html#event:media">media</a></li><li><a href="global.html#event:session">session</a></li><li><a href="global.html#event:signaling">signaling</a></li></ul><h3>Namespaces</h3><ul><li><a href="WebRTCCall.html">WebRTCCall</a></li><li><a href="WebRTCConnectivity.html">WebRTCConnectivity</a></li><li><a href="WebRTCFactory.html">WebRTCFactory</a></li></ul><h3>Mixins</h3><ul><li><a href="EventEmitter.html">EventEmitter</a></li></ul><h3>Global</h3><ul><li><a href="global.html#isWebRTCEnabled">isWebRTCEnabled</a></li></ul>
+</nav>
+
+<br clear="both">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.2.3-dev</a> on Wed Jan 14 2015 03:10:24 GMT+0100 (CET)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>
