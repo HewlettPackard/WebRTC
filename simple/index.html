@@ -1,0 +1,35 @@
+<html><head>
+  <meta charset="UTF-8">
+  <title>HP WEBRTC - Simple Demo Sample</title>
+  <link type="text/css" rel="stylesheet" href="css/bootstrap.min.css"/>
+</head>
+
+<body>
+
+<div>
+	<video id="localVideo" style="margin: 10px; background-color: black; width: 640px; height: 380px;" oncontextmenu="return false;"></video>
+	<video id="remoteVideo" style="margin: 10px; background-color: black; width: 640px; height: 380px;" oncontextmenu="return false;"></video>
+</div>
+
+<div>
+	<button id="placeCall" style="margin: 10px;" class="btn btn-default">Call</button>
+	<button id="hangUpCall" style="margin: 10px;" class="btn btn-default">Hang Up</button>
+
+	<p style="margin: 10px;">Status : <span class="status">???</span></p>
+</div>
+
+</body>
+
+<!-- JQuery Interface -->
+<script type="text/javascript" src="js/jquery-2.1.1.min.js"></script>
+
+<!-- WebRTC Dependencies -->
+<script type="text/javascript" src="js/lodash.min.js"></script>
+<script type="text/javascript" src="js/socket.io/socket.io-1.0.6.js"></script>
+
+<!-- WebRTC Client Library -->
+<script type="text/javascript" src="js/hp-webrtc-api.js"></script>
+
+<script type="text/javascript" src="js/simple.js"></script>
+
+</html>
